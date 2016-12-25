@@ -1,0 +1,13 @@
+// protobuf stubs for echo netty service
+
+option java_package = "org.netty.experiment.protobuf.echo.stubs";
+option java_outer_classname = "ProtoEchoStubs";
+package netty.protostubs;
+
+message EchoRequest {
+    optional string data = 1;
+}
+
+message EchoResponse {
+    optional string data = 1;
+}
