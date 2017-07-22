@@ -40,7 +40,7 @@ public class ProtobufEchoClient {
     private static AtomicInteger messagesPerSecond = new AtomicInteger();
 
     private final static int NUMBER_OF_TIMES = 10000000;
-    private final static int NUMBER_OF_CLIENTS = 1;
+    private final static int NUMBER_OF_CLIENTS = 5;
 
     private static void runImpl() throws Exception {
         // Configure SSL.
@@ -58,7 +58,6 @@ public class ProtobufEchoClient {
             b.group(group)
                     .channel(NioSocketChannel.class)
                     .option(ChannelOption.SO_BACKLOG, 2048)
-                    .option(ChannelOption.TCP_NODELAY, true)
                     .option(ChannelOption.SO_KEEPALIVE, true)
                     .option(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)
                     .handler(new ChannelInitializer<SocketChannel>() {

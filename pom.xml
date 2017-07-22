@@ -16,9 +16,6 @@
         <maven.plugin.compiler.version>3.5.1</maven.plugin.compiler.version>
 
         <fasterxml.jackson.version>2.7.2</fasterxml.jackson.version>
-        <guice.version>4.0</guice.version>
-        <slf4j.version>1.0.1</slf4j.version>
-        <log4j.version>1.2.17</log4j.version>
         <maven.plugin.assembly.version>2.6</maven.plugin.assembly.version>
         <maven.plugin.dependency.version>2.10</maven.plugin.dependency.version>
         <hibernate.version>5.1.0.Final</hibernate.version>
@@ -48,18 +45,6 @@
             </dependency>
 
             <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>19.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>4.2.5.RELEASE</version>
-            </dependency>
-
-            <dependency>
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
                 <version>${protobuf.version}</version>
@@ -68,14 +53,8 @@
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
-                <version>4.0.34.Final</version>
+                <version>4.1.12.Final</version>
             </dependency>
-
-            <!--<dependency>-->
-                <!--<groupId>io.netty</groupId>-->
-                <!--<artifactId>netty</artifactId>-->
-                <!--<version>3.10.5.Final</version>-->
-            <!--</dependency>-->
 
         </dependencies>
     </dependencyManagement>
