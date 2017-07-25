@@ -52,12 +52,12 @@ public class ProtobufEchoClient {
             sslCtx = null;
         }
 
-        EventLoopGroup group = new NioEventLoopGroup(1);
+        EventLoopGroup group = new NioEventLoopGroup(2);
         try {
             Bootstrap b = new Bootstrap();
             b.group(group)
                     .channel(NioSocketChannel.class)
-                    .option(ChannelOption.SO_BACKLOG, 2048)
+                    .option(ChannelOption.SO_BACKLOG, 4096)
                     .option(ChannelOption.SO_KEEPALIVE, true)
                     .option(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)
                     .handler(new ChannelInitializer<SocketChannel>() {

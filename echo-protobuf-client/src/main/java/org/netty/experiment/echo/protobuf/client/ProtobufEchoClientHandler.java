@@ -16,8 +16,16 @@ public class ProtobufEchoClientHandler extends SimpleChannelInboundHandler<Proto
     private AtomicInteger roundTrip = new AtomicInteger(0);
     private AtomicInteger messagesPerSecond;
     private final int numberOfTimes;
-    private final String MSG = "TEST DATA ... DATA TESTTEST DATA ... DATA TESTTEST DATA ... DATA TESTTEST DATA ... DATA TESTTEST DATA ... DATA TESTTEST DATA ... DATA TESTTEST DATA ... DATA TEST";
-    private final boolean dynamicSwitchForAllInOneMessagesSend = false;
+    private static final String MSG;
+    private final boolean dynamicSwitchForAllInOneMessagesSend = true;
+
+    static {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 500; ++i) {
+            sb.append("X");
+        }
+        MSG = sb.toString();
+    }
 
     public ProtobufEchoClientHandler(AtomicInteger messagesPerSecond, int numberOfTimes) {
         this.messagesPerSecond = messagesPerSecond;

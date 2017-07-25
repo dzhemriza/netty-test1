@@ -44,12 +44,11 @@ public class ProtobufEchoServerApp {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup(6);
         try {
-            DefaultEventExecutorGroup g1 = new DefaultEventExecutorGroup(1);
             ServerBootstrap b = new ServerBootstrap();
-            //b.group(bossGroup, workerGroup)
             b.group(bossGroup, workerGroup)
+//            b.group(bossGroup)
                     .channel(NioServerSocketChannel.class)
-                    .option(ChannelOption.SO_BACKLOG, 2048)
+                    .option(ChannelOption.SO_BACKLOG, 4096)
                     .option(ChannelOption.SO_KEEPALIVE, true)
                     .option(ChannelOption.ALLOCATOR, PooledByteBufAllocator.DEFAULT)
                     .handler(new LoggingHandler(LogLevel.ERROR))
